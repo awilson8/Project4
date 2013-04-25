@@ -7,6 +7,7 @@ import java.net.URI;
 
 public class View extends JPanel {
 	Reader vReader = new Reader();
+	JFrame frame = new JFrame("Drew Wilson - Project 4");
 	public static final int FRAMEHEIGHT = 345;
 	public static final int FRAMEWIDTH = 705;
 	private Image background;
@@ -52,7 +53,6 @@ public class View extends JPanel {
 	}
 	
 	public void display() {
-		JFrame frame = new JFrame("Drew Wilson - Project 4");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setContentPane(this);
@@ -60,6 +60,7 @@ public class View extends JPanel {
 	    frame.setVisible(true);
 	    frame.setResizable(false);
 	    frame.setLocationRelativeTo(null);
+	    frame.setAlwaysOnTop(true);
 	}
 	
 	/**
