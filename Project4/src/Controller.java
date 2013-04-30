@@ -5,7 +5,7 @@
  * @version 1.0
  */
 public class Controller {
-    View cView = new View();
+    private View cView = new View();
 
     /**
      * runProgram runs the program.

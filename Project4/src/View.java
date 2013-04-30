@@ -3,7 +3,6 @@ import java.awt.event.*;
 import java.util.Scanner;
 import javax.swing.*;
 import javax.swing.event.*;
-import java.net.URI;
 /**
  * View class for Project4.
  * 
@@ -11,18 +10,17 @@ import java.net.URI;
  * @version 1.0
  */
 public class View extends JPanel {
-	Reader vReader = new Reader();
-	JFrame frame = new JFrame("Drew Wilson - Project 4");
-	public static final int FRAMEHEIGHT = 345;
-	public static final int FRAMEWIDTH = 705;
+	private Reader vReader = new Reader();
+	private JFrame frame = new JFrame("Drew Wilson - Project 4");
+	private static final int FRAMEHEIGHT = 345;
+	private static final int FRAMEWIDTH = 705;
 	private Image background;
 	private JTextField artist = new JTextField("Ex: Celine Dion");
-	String[] stats = { "All", "Bio", "Top Tracks", "Listeners", "Top Albums" };
-	JComboBox selectStat = new JComboBox(stats);
-	JButton go = new JButton("Go!");
+	private String[] stats = { "All", "Bio", "Top Tracks", "Listeners", "Top Albums" };
+	private JComboBox selectStat = new JComboBox(stats);
+	private JButton go = new JButton("Go!");
 	private JEditorPane messageCenter = new JEditorPane("text/html","");
-	JScrollPane sp = new JScrollPane(messageCenter);
-	Runtime rt = Runtime.getRuntime();
+	private JScrollPane sp = new JScrollPane(messageCenter);
 	
 	/**
 	 * Create the panel.

@@ -1,6 +1,5 @@
 import java.io.*;
 import java.net.URL;
-import java.util.*;
 import net.sf.json.*;
 /**
  * Reader class for Project4.
@@ -8,10 +7,7 @@ import net.sf.json.*;
  * @author Drew Wilson
  * @version 1.0
  */
-public class Reader {
-	Scanner scan = new Scanner(System.in);
-	String code = "";
-	
+public class Reader {	
 	/**
 	 * Handles the task of reading the URL
 	 * @param webservice the String of the URL
