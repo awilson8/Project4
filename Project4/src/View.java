@@ -4,7 +4,12 @@ import java.util.Scanner;
 import javax.swing.*;
 import javax.swing.event.*;
 import java.net.URI;
-
+/**
+ * View class for Project4.
+ * 
+ * @author Drew Wilson
+ * @version 1.0
+ */
 public class View extends JPanel {
 	Reader vReader = new Reader();
 	JFrame frame = new JFrame("Drew Wilson - Project 4");
@@ -52,15 +57,16 @@ public class View extends JPanel {
 		g.drawImage(background, 0, 0, FRAMEWIDTH, FRAMEHEIGHT, null);
 	}
 	
+	/**
+	 * Displays the Frame
+	 */
 	public void display() {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setContentPane(this);
 	    frame.setSize(FRAMEWIDTH,366);
 	    frame.setVisible(true);
-	    frame.setResizable(false);
 	    frame.setLocationRelativeTo(null);
-	    frame.setAlwaysOnTop(true);
 	}
 	
 	/**
@@ -69,7 +75,7 @@ public class View extends JPanel {
 	private class GoClickHandler implements ActionListener{
 
 		/**
-		 * This method handles the tasks of loading
+		 * This method handles the tasks of loading the statistics
 		 *
 		 * @param e the action event handled by this method
 		 */
@@ -80,7 +86,7 @@ public class View extends JPanel {
 			try {
 				while (scan.hasNext()) {
 					String temp = scan.next();
-					if (temp.equals("&") || temp.equals("-")) {
+					if (temp.equals("&") || temp.equals("-") || temp.equals("/")) {
 						art += temp;
 					}
 					else {
@@ -103,7 +109,7 @@ public class View extends JPanel {
 	private class HyperLinkHandler implements HyperlinkListener{
 
 		/**
-		 * This method handles the tasks of loading
+		 * This method handles the tasks of loading the hyperlink
 		 *
 		 * @param e the action event handled by this method
 		 */

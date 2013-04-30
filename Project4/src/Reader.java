@@ -2,11 +2,22 @@ import java.io.*;
 import java.net.URL;
 import java.util.*;
 import net.sf.json.*;
-
+/**
+ * Reader class for Project4.
+ * 
+ * @author Drew Wilson
+ * @version 1.0
+ */
 public class Reader {
 	Scanner scan = new Scanner(System.in);
 	String code = "";
 	
+	/**
+	 * Handles the task of reading the URL
+	 * @param webservice the String of the URL
+	 * @return String of the URL
+	 * @throws Exception
+	 */
 	public static String readURL(String webservice) throws Exception {
 		URL oracle = new URL(webservice);
 		BufferedReader in = new BufferedReader(
@@ -24,6 +35,12 @@ public class Reader {
 		return result;
     }
 	
+	/**
+	 * Gets the selected statistics of the entered the artist
+	 * @param artist the String of the artist
+	 * @param stats the String of the statistic
+	 * @return the String of the requested statistic
+	 */
 	public String getStats(String artist, String stats) {
 		String string = "";
 		if (stats.equals("All")) {
@@ -51,6 +68,11 @@ public class Reader {
 		return string;
 	}
 
+	/**
+	 * Helper method for getStats that returns the tracks
+	 * @param artist the String of the artist
+	 * @return the String of the statistic
+	 */
 	private String tracks(String artist) {
 		String string ="<strong><u>Top Tracks:</u></strong><br />";
 		try{
@@ -70,6 +92,11 @@ public class Reader {
 		return string;
 	}
 	
+	/**
+	 * Helper method for getStats that returns the listeners
+	 * @param artist the String of the artist
+	 * @return the String of the statistic
+	 */
 	private String listeners(String artist) {
 		String string ="";
 		try{
@@ -87,6 +114,11 @@ public class Reader {
 		return string;
 	}
 	
+	/**
+	 * Helper method for getStats that returns the bio
+	 * @param artist the String of the artist
+	 * @return the String of the statistic
+	 */
 	private String bio(String artist) {
 		String string = "<strong><u>Bio:</u></strong><br />";
 		try{
@@ -103,6 +135,11 @@ public class Reader {
 		return string.replaceAll("<a href", "<br /><a href");
 	}
 	
+	/**
+	 * Helper method for getStats that returns the albums
+	 * @param artist the String of the artist
+	 * @return the String of the statistic
+	 */
 	private String albums(String artist) {
 		String string ="<strong><u>Top Albums:</u></strong><br />";
 		try{
